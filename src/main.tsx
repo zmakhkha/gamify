@@ -1,6 +1,7 @@
 import { render } from "preact";
 import { App } from "./app";
-import { ChakraProvider, ColorModeScript, theme } from "@chakra-ui/react";
+import theme from "./theme";
+import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import "./index.css";
 import NavBar from "./NavBar";
 
