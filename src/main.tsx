@@ -1,16 +1,16 @@
-import { render } from "preact";
-import { App } from "./app";
-import theme from "./theme";
-import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
 import "./index.css";
-import NavBar from "./NavBar";
+import { ChakraProvider, ColorModeScript, theme } from "@chakra-ui/react";
+import NavBar from "./components/NavBar";
 
-render(
-  <ChakraProvider theme={theme}>
-    <ColorModeScript initialColorMode={theme.config.initialColorMode}/>
-    <NavBar/>
-    <App />
-      </ChakraProvider>,
-
-  document.getElementById("app") as HTMLElement
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <React.StrictMode>
+    <ChakraProvider theme={theme}>
+      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      <NavBar />
+      <App />
+    </ChakraProvider>
+  </React.StrictMode>
 );
